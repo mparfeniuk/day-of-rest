@@ -84,7 +84,7 @@ export const translations: Record<Language, Translations> = {
       },
     ],
     quantum: {
-      buttonText: "Дізнатися коли цей піздец закінчиться",
+      buttonText: "Дізнатися коли цей пиздець закінчиться",
       calculating: "Система обчислює... Генерує відповідь...",
       answerText:
         "Наш сучасний квантовий комп'ютер відкорегував відповідь і зробив її точнішою.",

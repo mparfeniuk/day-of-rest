@@ -33,7 +33,6 @@ function AppContent() {
       <main className="scroll-container">
         {t.blocks.map((block, index) => {
           const colors = getBlockColor(index);
-          const isLast = index === t.blocks.length - 1;
           const backgroundImage =
             index === 0
               ? "/images/block-1/bg-block-1.jpg"
@@ -57,7 +56,6 @@ function AppContent() {
               backgroundImage={backgroundImage}
               overlayColor={overlayColor}
               backgroundSize={backgroundSize}
-              isLast={isLast}
             >
               {block.id === "bible" ? (
                 // Bible block - special styling for verse with spinning decorations

@@ -185,13 +185,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 0.5rem;
     width: 100%;
     min-height: 100vh;
   }
 
   .reflection-image-container {
-    flex: 0 0 auto;
     width: 80%;
     max-width: 80%;
     display: flex;
@@ -225,7 +224,7 @@
   @media (max-width: 768px) {
     .reflection-block-layout {
       flex-direction: column;
-      gap: 2rem;
+      gap: 0.5rem;
     }
 
     .reflection-image-container {

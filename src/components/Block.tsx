@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState, ReactNode } from "react";
-import { ScrollArrow } from "./ScrollArrow";
 
 interface BlockProps {
   id: string;
   bgColor: string;
   textColor: string;
-  isLast?: boolean;
   backgroundImage?: string;
   overlayColor?: string;
   backgroundSize?: "cover" | "contain" | string;
@@ -16,7 +14,6 @@ export function Block({
   id,
   bgColor,
   textColor,
-  isLast = false,
   backgroundImage,
   overlayColor,
   backgroundSize = "cover",
@@ -49,14 +46,6 @@ export function Block({
       observer.disconnect();
     };
   }, []);
-
-  const scrollToNext = () => {
-    const nextSection = sectionRef.current
-      ?.nextElementSibling as HTMLElement | null;
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section
@@ -91,8 +80,6 @@ export function Block({
       <div className="block-content max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
         {children}
       </div>
-
-      {!isLast && <ScrollArrow onClick={scrollToNext} textColor={textColor} />}
     </section>
   );
 }

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useLanguage } from '../context/LanguageContext';
+import { useEffect, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 interface NavigationProps {
   blockIds: string[];
@@ -40,7 +40,7 @@ export function Navigation({ blockIds }: NavigationProps) {
   const scrollToBlock = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -55,14 +55,15 @@ export function Navigation({ blockIds }: NavigationProps) {
           onClick={() => scrollToBlock(id)}
           className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-rest-cream focus:ring-offset-2 focus:ring-offset-rest-dark ${
             activeIndex === index
-              ? 'bg-rest-cream scale-125 shadow-lg'
-              : 'bg-rest-cream/40 hover:bg-rest-cream/70 hover:scale-110'
+              ? "bg-rest-cream scale-125 shadow-lg"
+              : "bg-rest-cream/40 hover:bg-rest-cream/70 hover:scale-110"
           }`}
-          aria-label={`${t.blocks[index]?.title || id} (${index + 1}/${blockIds.length})`}
-          aria-current={activeIndex === index ? 'true' : undefined}
+          aria-label={`${t.blocks[index]?.title || id} (${index + 1}/${
+            blockIds.length
+          })`}
+          aria-current={activeIndex === index ? "true" : undefined}
         />
       ))}
     </nav>
   );
 }
-

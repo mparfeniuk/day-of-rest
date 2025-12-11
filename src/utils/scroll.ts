@@ -28,7 +28,7 @@ export function setupKeyboardNavigation(
     const clampedIndex = Math.max(0, Math.min(index, blockIds.length - 1));
     const targetSection = document.getElementById(blockIds[clampedIndex]);
     if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+      targetSection.scrollIntoView({ behavior: "smooth" });
       currentIndex = clampedIndex;
     }
   };
@@ -45,36 +45,35 @@ export function setupKeyboardNavigation(
     updateCurrentIndex();
 
     switch (event.key) {
-      case 'ArrowDown':
-      case 'PageDown':
+      case "ArrowDown":
+      case "PageDown":
         event.preventDefault();
         scrollToIndex(currentIndex + 1);
         break;
 
-      case 'ArrowUp':
-      case 'PageUp':
+      case "ArrowUp":
+      case "PageUp":
         event.preventDefault();
         scrollToIndex(currentIndex - 1);
         break;
 
-      case 'Home':
+      case "Home":
         event.preventDefault();
         scrollToIndex(0);
         break;
 
-      case 'End':
+      case "End":
         event.preventDefault();
         scrollToIndex(blockIds.length - 1);
         break;
     }
   };
 
-  document.addEventListener('keydown', handleKeyDown);
-  container.addEventListener('scroll', updateCurrentIndex);
+  document.addEventListener("keydown", handleKeyDown);
+  container.addEventListener("scroll", updateCurrentIndex);
 
   return () => {
-    document.removeEventListener('keydown', handleKeyDown);
-    container.removeEventListener('scroll', updateCurrentIndex);
+    document.removeEventListener("keydown", handleKeyDown);
+    container.removeEventListener("scroll", updateCurrentIndex);
   };
 }
-

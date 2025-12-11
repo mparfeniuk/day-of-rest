@@ -1,4 +1,4 @@
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from "../context/LanguageContext";
 
 interface ScrollArrowProps {
   onClick: () => void;
@@ -32,4 +32,3 @@ export function ScrollArrow({ onClick, textColor }: ScrollArrowProps) {
     </button>
   );
 }
-
